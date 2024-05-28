@@ -1,13 +1,13 @@
 modLoader = "javafml"
 loaderVersion = "[2,)"
 #issueTrackerURL = ""
-license = "Insert License Here"
+license = "MIT"
 
 [[mods]]
 modId = "arcanegardens"
 version = "${modVersion}"
 displayName = "Arcane Gardens"
-authors = "Me!"
+authors = "Master_Bw3"
 description = '''
 This is an example description! Tell everyone what your mod is about!
 '''
@@ -35,4 +35,4 @@ ordering = "AFTER"
 side = "BOTH"
 
 [[mixins]]
-config = "arcanegardens.mixins.json"
+config = "arcanegardens-common.mixins.json"
