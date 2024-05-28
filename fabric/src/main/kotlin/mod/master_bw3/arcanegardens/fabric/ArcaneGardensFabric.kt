@@ -1,16 +1,15 @@
 package mod.master_bw3.arcanegardens.fabric;
 
-import mod.master_bw3.arcanegardens.ExampleMod;
+import mod.master_bw3.arcanegardens.ArcaneGardens;
 import net.fabricmc.api.ModInitializer;
 
-public final class ExampleModFabric implements ModInitializer {
-    @Override
-    public void onInitialize() {
+object ArcaneGardensFabric: ModInitializer {
+    override fun onInitialize() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
 
         // Run our common setup.
-        ExampleMod.init();
+        ArcaneGardens.init();
     }
 }

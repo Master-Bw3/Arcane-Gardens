@@ -15,12 +15,14 @@
   "icon": "assets/arcanegardens/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "mod.master_bw3.arcanegardens.fabric.ExampleModFabric"
-    ],
-    "client": [
-      "mod.master_bw3.arcanegardens.fabric.client.ExampleModFabricClient"
-    ]
+    "main": [{
+        "adapter": "kotlin",
+        "value": "mod.master_bw3.arcanegardens.fabric.ArcaneGardensFabric"
+    }],
+    "client": [{
+        "adapter": "kotlin",
+        "value": "mod.master_bw3.arcanegardens.fabric.client.ArcaneGardensFabricClient"
+      }]
   },
   "mixins": [
     "arcanegardens-common.mixins.json"
@@ -30,7 +32,8 @@
     "minecraft": "~1.20.6",
     "java": ">=21",
     "architectury": ">=12.1.2",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "fabric-language-kotlin": ">=${versions.kotlin_fabric}"
   },
   "suggests": {
     "another-mod": "*"
