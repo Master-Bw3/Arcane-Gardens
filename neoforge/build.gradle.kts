@@ -1,5 +1,3 @@
-import arcanegardens.utils.kotlinForgeRuntimeLibrary
-
 plugins {
     id("arcanegardens.conventions.platform")
     id("arcanegardens.utils.kotlin-neoforge-runtime-library")

@@ -5,7 +5,7 @@ license = "Insert License Here"
 
 [[mods]]
 modId = "arcanegardens"
-version = "${version}"
+version = "${modVersion}"
 displayName = "Arcane Gardens"
 authors = "Me!"
 description = '''

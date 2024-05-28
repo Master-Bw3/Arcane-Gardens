@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "id": "arcanegardens",
-  "version": "${version}",
+  "version": "${modVersion}",
   "name": "Arcane Gardens",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Me!"
+    "Master_Bw3"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
@@ -23,7 +23,7 @@
     ]
   },
   "mixins": [
-    "arcanegardens.mixins.json"
+    "arcanegardens-common.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.15.11",
