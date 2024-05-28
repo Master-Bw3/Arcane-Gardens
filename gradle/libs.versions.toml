@@ -1,0 +1,78 @@
+
+[versions]
+parchment = "2022.11.27"
+
+
+java = "21"
+
+kotlin = "1.9.23"
+kotlin-fabric = "1.10.19+kotlin.1.9.23"
+kotlin-forge = "5.1.0"
+
+
+# Minecraft
+minecraft= "1.20.6"
+yarn-mappings = "1.20.6+build.1:v2"
+
+architectury = "12.1.2"
+architectury-plugin = { require="[3.4, 3.5[" }
+architectury-loom = { require="[1.6, 1.7[" }
+fabric-loader = "0.15.11"
+fabric-api = "0.99.0+1.20.6"
+neoforge = "20.6.75-beta"
+yarn-mappings-patch-neoforge = "1.20.5+build.3:v2"
+
+# mods
+mixinExtras = "0.1.1"
+
+# other non-Minecraft dependencies
+asm = "9.5"
+dotenv = "2.0.0" # for template.env debugger keys
+shadow = "7.1.2"
+modPublish = "0.5.1"
+pkpcpbp = "0.1.0-pre-87"
+
+[bundles]
+asm = ["asm", "asm-analysis", "asm-commons", "asm-tree", "asm-util"]
+
+
+[libraries]
+parchment = { module="org.parchmentmc.data:parchment-1.19.2", version.ref="parchment" }
+
+
+kotlin-stdlib = { module="org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref="kotlin" }
+kotlin-fabric = { module="net.fabricmc:fabric-language-kotlin", version.ref="kotlin-fabric" }
+kotlin-forge  = { module="thedarkcolour:kotlinforforge-neoforge", version.ref="kotlin-forge" }
+
+minecraft     = { module="com.mojang:minecraft", version.ref="minecraft" }
+
+architectury        = { module="dev.architectury:architectury", version.ref="architectury" }
+architectury-neoforge  = { module="dev.architectury:architectury-neoforge", version.ref="architectury" }
+architectury-fabric = { module="dev.architectury:architectury-fabric", version.ref="architectury" }
+
+yarn-mappings          = {module="net.fabricmc:yarn", version.ref="yarn-mappings"}
+yarn-mappings-neoforge = {module="dev.architectury:yarn-mappings-patch-neoforge", version.ref="yarn-mappings-patch-neoforge"}
+
+fabric-loader = { module="net.fabricmc:fabric-loader", version.ref="fabric-loader" }
+fabric-api    = { module="net.fabricmc.fabric-api:fabric-api", version.ref="fabric-api" }
+
+neoforge      = { module="net.neoforged:neoforge", version.ref="neoforge" }
+mixinExtras   = { module="com.github.LlamaLad7:MixinExtras", version.ref="mixinExtras" }
+
+asm           = { module="org.ow2.asm:asm", version.ref="asm" }
+asm-analysis  = { module="org.ow2.asm:asm-analysis", version.ref="asm" }
+asm-commons   = { module="org.ow2.asm:asm-commons", version.ref="asm" }
+asm-tree      = { module="org.ow2.asm:asm-tree", version.ref="asm" }
+asm-util      = { module="org.ow2.asm:asm-util", version.ref="asm" }
+
+pkpcpbp       = { module="at.petra-k.pkpcpbp:PKPCPBP", version.ref="pkpcpbp" }
+
+[plugins]
+kotlin-jvm = { id="org.jetbrains.kotlin.jvm", version.ref="kotlin" }
+
+architectury      = { id="architectury-plugin", version.ref="architectury-plugin" }
+architectury-loom = { id="dev.architectury.loom", version.ref="architectury-loom" }
+
+dotenv     = { id="co.uzzu.dotenv.gradle", version.ref="dotenv" }
+shadow     = { id="com.github.johnrengelman.shadow", version.ref="shadow" }
+modPublish = { id="me.modmuss50.mod-publish-plugin", version.ref="modPublish" }
