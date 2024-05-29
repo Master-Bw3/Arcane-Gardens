@@ -1,5 +1,6 @@
 package mod.master_bw3.arcanegardens;
 
+import mod.master_bw3.arcanegardens.common.registry.ArcaneGardensBlockEntities.BLOCK_ENTITIES
 import mod.master_bw3.arcanegardens.common.registry.ArcaneGardensBlocks
 import mod.master_bw3.arcanegardens.common.registry.ArcaneGardensBlocks.BLOCKS
 import mod.master_bw3.arcanegardens.common.registry.ArcaneGardensCreativeTabs
@@ -31,11 +32,9 @@ object ArcaneGardens {
     fun initRegistries() {
         BLOCKS.register()
         ITEMS.register()
+        BLOCK_ENTITIES.register()
         TABS.register()
 
     }
-
-    private fun <T : Any> bind(registry: Registry<in T>): BiConsumer<T, ResourceLocation> =
-        BiConsumer<T, ResourceLocation> { t, id -> Registry.register(registry, id, t) }
 
 }
