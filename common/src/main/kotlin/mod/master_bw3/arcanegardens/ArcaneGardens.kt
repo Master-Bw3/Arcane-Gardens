@@ -29,8 +29,8 @@ object ArcaneGardens {
     }
 
     fun initRegistries() {
-        ITEMS.register()
         BLOCKS.register()
+        ITEMS.register()
         TABS.register()
 
     }

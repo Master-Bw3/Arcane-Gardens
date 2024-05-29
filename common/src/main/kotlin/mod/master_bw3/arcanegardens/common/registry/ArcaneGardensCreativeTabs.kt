@@ -3,6 +3,7 @@ package mod.master_bw3.arcanegardens.common.registry
 import dev.architectury.registry.CreativeTabRegistry
 import dev.architectury.registry.registries.DeferredRegister
 import mod.master_bw3.arcanegardens.ArcaneGardens.MODID
+import mod.master_bw3.arcanegardens.ArcaneGardens.modLoc
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.chat.Component
 import net.minecraft.world.item.CreativeModeTab
@@ -21,7 +22,7 @@ object ArcaneGardensCreativeTabs {
             Component.translatable("category.architectury_test"),  // Tab Name
             Supplier<ItemStack> {
                 ItemStack(
-                    ArcaneGardensItems.EXAMPLE_ITEM.get()
+                    ArcaneGardensItems.ITEMS.first { it.`is`(modLoc("example_item")) }
                 )
             } // Icon
         )

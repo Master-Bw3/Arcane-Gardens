@@ -8,25 +8,46 @@ import mod.master_bw3.arcanegardens.common.registry.ArcaneGardensCreativeTabs.MY
 import mod.master_bw3.arcanegardens.common.registry.ArcaneGardensItems.ITEMS
 import net.minecraft.core.registries.Registries
 import net.minecraft.world.item.BlockItem
+import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.SoundType
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.material.MapColor
+import java.util.function.Supplier
 
 
 object ArcaneGardensBlocks {
     val BLOCKS = DeferredRegister.create<Block>(MODID, Registries.BLOCK)
 
-    val EXAMPLE_BLOCK: RegistrySupplier<Block> = BLOCKS.register("example_block") {
-        BlockLog(BlockProperties.woody(MapColor.COLOR_BROWN))
+    init {
+        registerBlockAndBlockItem("example_block", MY_TAB) { BlockLog(BlockProperties.woody(MapColor.COLOR_BROWN)) }
     }
 
-    val EXAMPLE_BLOCK_ITEM: RegistrySupplier<Item> = ITEMS.register("example_block") {
-        BlockItem(EXAMPLE_BLOCK.get(), Item.Properties())
+    fun registerBlock(id: String, supplier: Supplier<Block>) {
+        BLOCKS.register(id, supplier)
     }
 
+    fun registerBlockAndBlockItem(id: String, supplier: Supplier<Block>) {
+        BLOCKS.register(id) {
+            supplier.get().also {
+                ITEMS.register(id) {
+                    BlockItem(it, Item.Properties())
+                }
+            }
+        }
+    }
+
+    fun registerBlockAndBlockItem(id: String, tab: RegistrySupplier<CreativeModeTab>, supplier: Supplier<Block>) {
+        BLOCKS.register(id) {
+            supplier.get().also {
+                ITEMS.register(id) {
+                    BlockItem(it, Item.Properties().`arch$tab`(tab))
+                }
+            }
+        }
+    }
 
 }
 
