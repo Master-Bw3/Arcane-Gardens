@@ -1,5 +1,5 @@
 modLoader = "kotlinforforge"
-loaderVersion = "[${versions.kotlin_forge},)"
+loaderVersion = "${versions.kotlin_forge}"
 #issueTrackerURL = ""
 license = "MIT"
 

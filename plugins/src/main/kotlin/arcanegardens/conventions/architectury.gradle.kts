@@ -42,11 +42,14 @@ loom {
 dependencies {
     minecraft(libs.minecraft)
 
+//    mappings(loom.layered {
+//        libs.yarn.mappings
+//        libs.yarn.mappings.neoforge
+//    })
     mappings(loom.layered {
-        libs.yarn.mappings
-        libs.yarn.mappings.neoforge
+        officialMojangMappings()
+        parchment(libs.parchment)
     })
-
 
     annotationProcessor(libs.bundles.asm)
 }
